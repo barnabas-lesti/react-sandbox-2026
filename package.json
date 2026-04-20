@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "bun run build && vite preview",
-    "clean": "bunx rimraf bun.lock && git clean -Xfd && bun pm cache clean"
+    "clean": "bunx rimraf bun.lock && git clean -Xfd && bun pm cache clean",
+    "lint": "prettier . --write --cache"
   },
   "dependencies": {
     "react": "19.2.5",
@@ -20,6 +21,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.1",
     "babel-plugin-react-compiler": "1.0.0",
+    "prettier": "3.8.3",
     "typescript": "6.0.2",
     "vite": "8.0.9"
   }
