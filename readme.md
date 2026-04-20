@@ -17,6 +17,9 @@ React sandbox and experimentation web project.
   - It is a good idea to use [NVM](https://github.com/nvm-sh/nvm) (Node Version Manager) to manage NodeJS. It can easily help to switch NodeJS versions when working in multiple repositories.
 - [Bun](https://bun.sh/)
   - Faster and more robust package manager than `npm`.
+- [Visual Studio Code](https://code.visualstudio.com/) (or a fork of it, like [Antigravity](https://antigravity.google/))
+  - Other IDE can be used of course, but there are added settings for VSCode in the project.
+  - Once the project is opened in VSCode, install the recommended extensions.
 
 ## Quick start
 

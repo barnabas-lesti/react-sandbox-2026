@@ -1,0 +1,15 @@
+{
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "editor.rulers": [120],
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.wrapTabs": true,
+  "git.ignoreLimitWarning": true,
+  "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "markdown.extension.toc.levels": "2..6"
+}
