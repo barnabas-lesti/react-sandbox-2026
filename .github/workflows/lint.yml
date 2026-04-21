@@ -1,0 +1,70 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  lint-all:
+    name: lint (all)
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Lint code
+        run: |
+          bunx prettier . --check
+          bunx eslint .
+
+  lint-pr:
+    name: lint (changed)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Get all changed files
+        id: changed-all
+        uses: tj-actions/changed-files@v44
+
+      - name: Get changed JS/TS files
+        id: changed-js
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            **/*.js
+            **/*.jsx
+            **/*.ts
+            **/*.tsx
+
+      - name: Lint code
+        run: |
+          if [ "${{ steps.changed-all.outputs.any_changed }}" == "true" ]; then
+            bunx prettier --check --ignore-unknown ${{ steps.changed-all.outputs.all_changed_files }}
+          fi
+          if [ "${{ steps.changed-js.outputs.any_changed }}" == "true" ]; then
+            bunx eslint ${{ steps.changed-js.outputs.all_changed_files }}
+          fi
