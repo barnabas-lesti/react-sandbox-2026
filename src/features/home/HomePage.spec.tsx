@@ -5,9 +5,8 @@ import HomePage from "./HomePage";
 
 describe("HomePage", () => {
   it("should render correctly", () => {
-    const { rerender } = render(<HomePage />);
+    render(<HomePage />);
 
-    rerender(<HomePage />);
     expect(screen.getByRole("heading", { name: "Home Page" })).toBeInTheDocument();
   });
 });
