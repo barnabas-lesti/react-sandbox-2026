@@ -1,0 +1,13 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+
+import HomePage from "./HomePage";
+
+describe("HomePage", () => {
+  it("should render correctly", () => {
+    const { rerender } = render(<HomePage />);
+
+    rerender(<HomePage />);
+    expect(screen.getByRole("heading", { name: "Home Page" })).toBeInTheDocument();
+  });
+});
