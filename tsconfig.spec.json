@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.spec.tsbuildinfo",
+    "lib": ["ES2023", "DOM"],
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+    "jsx": "react-jsx"
+  },
+  "include": ["src/**/*.spec.*"]
+}

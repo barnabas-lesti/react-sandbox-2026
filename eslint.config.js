@@ -61,7 +61,7 @@ export default defineConfig([
     extends: [typescriptEslint.configs.strictTypeChecked],
     languageOptions: {
       parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
     },
