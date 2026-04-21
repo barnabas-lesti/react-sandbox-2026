@@ -2,6 +2,7 @@ import { defineConfig, mergeConfig } from "vitest/config";
 
 import viteConfig from "./vite.config";
 
+// https://vitest.dev/config/
 export default mergeConfig(
   viteConfig,
   defineConfig({
@@ -12,7 +13,7 @@ export default mergeConfig(
       coverage: {
         provider: "v8",
         reporter: ["text"],
-        include: ["src/**/*.{ts,tsx}"],
+        include: ["./src/**/*.{ts,tsx}"],
       },
     },
   }),
