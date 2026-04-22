@@ -12,7 +12,7 @@ export default mergeConfig(
       setupFiles: ["./vitest.setup.ts"],
       coverage: {
         provider: "v8",
-        reporter: ["text"],
+        reporter: ["text", "html"],
         include: ["./src/**/*.{ts,tsx}"],
       },
     },
